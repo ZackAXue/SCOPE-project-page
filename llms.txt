@@ -1,0 +1,25 @@
+# SCOPE: Control-Ready Uncertainty for Trajectory Diffusion
+
+> SCOPE (Score Curvature for Online Precision Estimation) extracts aleatoric trajectory uncertainty from diffusion models for robot control.
+
+SCOPE uses uncertainty as a policy prior for MPPI exploration and as a world model for collision-risk evaluation. The project evaluates Maze2D navigation, Y-corridor crowd navigation, and real-robot Franka Panda manipulation. The project page currently has no arXiv link, and the code link is marked Coming soon.
+
+## Research
+
+- [Project page](./index.html): Paper identity, authors, abstract, figures, and videos.
+- [Research summary](./research-summary.txt): Text version of the abstract, method, numerical results, and limitations.
+- [Method](./index.html#method): Score-curvature precision estimation and Gaussian uncertainty tubes.
+- [Limitations](./index.html#limitations): Backbone dependence, training coverage, real-robot failure cases, and visual-input limitations.
+
+## Experiments
+
+- [Maze2D](./index.html#maze2d): Trajectories and rollout-efficiency results.
+- [Y-corridor](./index.html#crowd-navigation): Navigation success across four pedestrian densities.
+- [Real robot](./index.html#real-robot): Static shelf manipulation and dynamic human interaction.
+- [Static robot videos](./index.html#robot-static-videos): Six comparison clips.
+- [Dynamic robot videos](./index.html#robot-dynamic-videos): Three human-interaction clips.
+
+## Optional
+
+- [Maze2D data](./scripts/maze2d_results.json): Success rates, mean path lengths, and reported plus/minus values.
+- [Y-corridor data](./scripts/y_corridor_results.json): All methods and crowd densities shown in the chart.

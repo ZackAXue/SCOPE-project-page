@@ -1,0 +1,450 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="SCOPE estimates aleatoric trajectory uncertainty from diffusion models using score curvature, guiding MPPI exploration and collision-risk evaluation.">
+  <link rel="canonical" href="https://zackaxue.github.io/SCOPE-project-page/">
+  <meta property="og:url" content="https://zackaxue.github.io/SCOPE-project-page/">
+  <meta name="theme-color" content="#ffffff">
+  <title>SCOPE: Control-Ready Uncertainty for Trajectory Diffusion</title>
+  <link rel="icon" href="./static/images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <!-- BEGIN GENERATED RESEARCH METADATA -->
+  <meta name="citation_title" content="Control-Ready Uncertainty for Trajectory Diffusion">
+  <meta name="citation_language" content="en">
+  <meta name="citation_author" content="Zhiwei Xue">
+  <meta name="citation_author" content="Jia Yue Kam">
+  <meta name="citation_author" content="Jinhang Qiu">
+  <meta name="citation_author" content="Yifeng Cheng">
+  <meta name="citation_author" content="Ege Gursoy">
+  <meta name="citation_author" content="Jiaming Wang">
+  <meta name="citation_author" content="Vincent Bonnet">
+  <meta name="citation_author" content="Harold Soh">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="SCOPE">
+  <meta property="og:title" content="SCOPE: Control-Ready Uncertainty for Trajectory Diffusion">
+  <meta property="og:description" content="SCOPE estimates aleatoric trajectory uncertainty from diffusion models using score curvature, guiding MPPI exploration and collision-risk evaluation.">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="SCOPE: Control-Ready Uncertainty for Trajectory Diffusion">
+  <meta name="twitter:description" content="SCOPE estimates aleatoric trajectory uncertainty from diffusion models using score curvature, guiding MPPI exploration and collision-risk evaluation.">
+  <link rel="alternate" type="text/plain" href="./research-summary.txt" title="SCOPE research summary">
+  <link rel="describedby" type="text/plain" href="./llms.txt" title="SCOPE machine-readable index">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "#webpage",
+      "name": "SCOPE: Control-Ready Uncertainty for Trajectory Diffusion",
+      "description": "SCOPE estimates aleatoric trajectory uncertainty from diffusion models using score curvature, guiding MPPI exploration and collision-risk evaluation.",
+      "inLanguage": "en",
+      "mainEntity": {
+        "@id": "#paper"
+      },
+      "relatedLink": [
+        "./research-summary.txt",
+        "./llms.txt"
+      ]
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "@id": "#paper",
+      "headline": "Control-Ready Uncertainty for Trajectory Diffusion",
+      "name": "Control-Ready Uncertainty for Trajectory Diffusion",
+      "description": "SCOPE estimates aleatoric trajectory uncertainty from diffusion models using score curvature, guiding MPPI exploration and collision-risk evaluation.",
+      "abstract": "Diffusion models can represent complex, multimodal trajectory distributions, but extracting uncertainty from them typically requires costly Monte Carlo sampling. This limits their use in real-time control, where robots must rapidly assess risk and maintain safety margins. We introduce Score-Curvature for Online Precision Estimation (SCOPE), a lightweight module that augments diffusion trajectory models with control-ready uncertainty. SCOPE learns a structured precision matrix around each nominal trajectory by distilling score-curvature information and producing calibrated Gaussian tubes with low overhead and without repeated Monte Carlo sampling. These tubes provide per-timestep covariance estimates that can be used both as predicted occupancy for moving agents and as adaptive exploration guides for robot control. We evaluate SCOPE with mode-conditioned multimodal diffusion backbones in pedestrian forecasting, crowd navigation, Maze2D control, and real-world Franka Panda manipulation. Across these settings, SCOPE provides fast uncertainty estimation, which leads to better closed-loop performance.",
+      "inLanguage": "en",
+      "author": [
+        {
+          "@type": "Person",
+          "name": "Zhiwei Xue",
+          "affiliation": [
+            {
+              "@type": "Organization",
+              "name": "National University of Singapore"
+            }
+          ],
+          "sameAs": "https://scholar.google.com/citations?user=iwj9v8IAAAAJ&hl=en"
+        },
+        {
+          "@type": "Person",
+          "name": "Jia Yue Kam",
+          "affiliation": [
+            {
+              "@type": "Organization",
+              "name": "National University of Singapore"
+            }
+          ]
+        },
+        {
+          "@type": "Person",
+          "name": "Jinhang Qiu",
+          "affiliation": [
+            {
+              "@type": "Organization",
+              "name": "National University of Singapore"
+            }
+          ]
+        },
+        {
+          "@type": "Person",
+          "name": "Yifeng Cheng",
+          "affiliation": [
+            {
+              "@type": "Organization",
+              "name": "National University of Singapore"
+            }
+          ]
+        },
+        {
+          "@type": "Person",
+          "name": "Ege Gursoy",
+          "affiliation": [
+            {
+              "@type": "Organization",
+              "name": "LAAS-CNRS"
+            }
+          ]
+        },
+        {
+          "@type": "Person",
+          "name": "Jiaming Wang",
+          "affiliation": [
+            {
+              "@type": "Organization",
+              "name": "National University of Singapore"
+            }
+          ]
+        },
+        {
+          "@type": "Person",
+          "name": "Vincent Bonnet",
+          "affiliation": [
+            {
+              "@type": "Organization",
+              "name": "LAAS-CNRS"
+            }
+          ]
+        },
+        {
+          "@type": "Person",
+          "name": "Harold Soh",
+          "affiliation": [
+            {
+              "@type": "Organization",
+              "name": "National University of Singapore"
+            },
+            {
+              "@type": "Organization",
+              "name": "Smart Systems Institute, National University of Singapore"
+            }
+          ],
+          "sameAs": "https://scholar.google.com/citations?user=lkgd1BsAAAAJ&hl=en"
+        }
+      ],
+      "mainEntityOfPage": {
+        "@id": "#webpage"
+      },
+      "keywords": [
+        "SCOPE",
+        "score curvature",
+        "aleatoric trajectory uncertainty",
+        "diffusion models",
+        "Gaussian tubes",
+        "MPPI",
+        "robot control"
+      ],
+      "image": "./static/images/scope_pipeline.png"
+    }
+  ]
+}
+  </script>
+  <!-- END GENERATED RESEARCH METADATA -->
+</head>
+<body id="top">
+  <main>
+    <section class="hero" aria-labelledby="project-title">
+      <a class="wordmark" href="#top" aria-label="SCOPE home">SCOPE</a>
+      <h1 id="project-title"><span class="title-initial">S</span>core <span class="title-initial">C</span>urvature for<br class="wide-break"> <span class="title-initial">O</span>nline <span class="title-initial">P</span>recision <span class="title-initial">E</span>stimation</h1>
+      <p class="hero-subtitle">Control-Ready Uncertainty for Trajectory Diffusion</p>
+      <p class="venue"><span>CoRL 2026</span><span class="venue-separator" aria-hidden="true">·</span><strong><span aria-hidden="true">✦</span> Spotlight</strong></p>
+
+      <div class="authors" aria-label="Authors">
+        <span><a href="https://scholar.google.com/citations?user=iwj9v8IAAAAJ&amp;hl=en">Zhiwei Xue</a><sup>1,*,†</sup></span>
+        <span>Jia Yue Kam<sup>1,*</sup></span>
+        <span>Jinhang Qiu<sup>1,*</sup></span>
+        <span>Yifeng Cheng<sup>1</sup></span>
+        <span>Ege Gursoy<sup>3</sup></span>
+        <span>Jiaming Wang<sup>1</sup></span>
+        <span>Vincent Bonnet<sup>3</sup></span>
+        <span><a href="https://scholar.google.com/citations?user=lkgd1BsAAAAJ&amp;hl=en">Harold Soh</a><sup>1,2,†</sup></span>
+      </div>
+      <p class="affiliations"><sup>1</sup> National University of Singapore <span aria-hidden="true">·</span> <sup>2</sup> Smart Systems Institute, NUS <span aria-hidden="true">·</span> <sup>3</sup> LAAS-CNRS</p>
+      <p class="author-notes"><sup>*</sup> Equal contribution <span aria-hidden="true">·</span> <sup>†</sup> Corresponding authors</p>
+
+      <nav class="hero-links" aria-label="Project links">
+        <a class="primary-link" href="#robot-static-videos">Robot videos <span aria-hidden="true">›</span></a>
+        <span class="coming-soon">arXiv</span>
+        <span class="coming-soon">GitHub · Coming soon</span>
+      </nav>
+    </section>
+
+    <section class="demo-section" id="demo" aria-label="SCOPE demonstration video">
+      <figure class="demo-figure">
+        <video class="demo-video" controls playsinline preload="metadata" poster="./static/images/scope_demo_poster.jpg">
+          <source src="./static/videos/scope_demo.mp4" type="video/mp4">
+          Your browser does not support HTML video.
+        </video>
+        <figcaption>Real-robot manipulation with SCOPE.</figcaption>
+      </figure>
+    </section>
+
+    <div class="paper-content">
+      <section class="paper-section abstract-section" id="abstract" aria-labelledby="abstract-title">
+        <h2 id="abstract-title">Abstract</h2>
+        <div class="reading-copy"><p>Diffusion models can represent complex, multimodal trajectory distributions, but extracting uncertainty from them typically requires costly Monte Carlo sampling. This limits their use in real-time control, where robots must rapidly assess risk and maintain safety margins. We introduce <strong>Score-Curvature for Online Precision Estimation</strong> (SCOPE), a lightweight module that augments diffusion trajectory models with control-ready uncertainty. SCOPE learns a structured precision matrix around each nominal trajectory by distilling score-curvature information and producing calibrated Gaussian tubes with low overhead and without repeated Monte Carlo sampling. These tubes provide per-timestep covariance estimates that can be used both as predicted occupancy for moving agents and as adaptive exploration guides for robot control. We evaluate SCOPE with mode-conditioned multimodal diffusion backbones in pedestrian forecasting, crowd navigation, Maze2D control, and real-world Franka Panda manipulation. Across these settings, SCOPE provides fast uncertainty estimation, which leads to better closed-loop performance.</p></div>
+      </section>
+
+      <section class="paper-section" id="method" aria-labelledby="method-title">
+        <h2 id="method-title">From Score Curvature to Gaussian Tubes</h2>
+        <p class="section-lead">SCOPE turns diffusion trajectories into Gaussian uncertainty tubes for real-time control.</p>
+        <figure class="paper-figure pipeline-figure">
+          <img src="./static/images/scope_pipeline.png" alt="Pipeline from mode-conditioned diffusion trajectories through the score-curvature precision head to Gaussian uncertainty tubes." loading="lazy" width="2883" height="697" decoding="async">
+          <figcaption><strong>Pipeline.</strong> Multimodal diffusion predicts nominal trajectories. The score-curvature head adds structured precision, yielding calibrated per-timestep uncertainty.</figcaption>
+        </figure>
+        <div class="control-roles">
+          <p><strong>SCOPE</strong> extracts <strong>aleatoric trajectory uncertainty</strong> from diffusion models for two uses:</p>
+          <ol>
+            <li><strong><a href="#maze2d">Policy prior</a>:</strong> adapt MPPI exploration to the robot's motion flexibility.</li>
+            <li><strong><a href="#crowd-navigation">World model</a>:</strong> predict other agents' occupancy for collision-risk evaluation.</li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="paper-section" id="maze2d" aria-labelledby="maze2d-title">
+        <p class="section-label">Policy prior</p>
+        <h2 id="maze2d-title">Maze2D Navigation</h2>
+        <div class="reading-copy"><p>A diffusion plan guides MPPI through unseen mazes. SCOPE widens exploration in open regions and narrows it near walls.</p></div>
+        <div class="maze-comparison" id="maze-comparison" aria-label="Four planners in the same maze">
+          <div class="maze-playback" hidden>
+            <div class="maze-mode" role="group" aria-label="Maze2D playback mode">
+              <button type="button" data-maze-mode="sync" aria-pressed="true">Sync</button>
+              <button type="button" data-maze-mode="independent" aria-pressed="false">Individual</button>
+            </div>
+            <button type="button" data-maze-play>Play</button>
+            <button type="button" data-maze-replay>Replay</button>
+            <input data-maze-timeline type="range" min="0" max="38.75" step="0.01" value="0" aria-label="Maze2D comparison timeline">
+            <span data-maze-status>512 samples per update</span>
+          </div>
+          <div class="maze-planner-grid">
+            <article class="maze-planner">
+              <h3>Vanilla MPPI</h3><p>Fixed exploration</p>
+              <video data-maze-method="mppi" controls muted playsinline preload="none" poster="./static/images/maze2d/mppi.png?v=clean-labels-1" width="900" height="900" aria-label="Vanilla MPPI Maze2D navigation">
+                <source src="./static/videos/maze2d/mppi.mp4?v=clean-labels-1" type="video/mp4">
+                Your browser does not support embedded video.
+              </video>
+              <div class="maze-clip-actions"><button type="button" data-maze-contact="mppi">Collision detail ↗</button></div>
+            </article>
+            <article class="maze-planner">
+              <h3>Log-MPPI</h3><p>Log-normal exploration</p>
+              <video data-maze-method="logmppi" controls muted playsinline preload="none" poster="./static/images/maze2d/logmppi.png?v=clean-labels-1" width="900" height="900" aria-label="Log-MPPI Maze2D navigation">
+                <source src="./static/videos/maze2d/logmppi.mp4?v=clean-labels-1" type="video/mp4">
+                Your browser does not support embedded video.
+              </video>
+              <div class="maze-clip-actions"></div>
+            </article>
+            <article class="maze-planner">
+              <h3>Diff-MPPI</h3><p>Diffusion guide + fixed exploration</p>
+              <video data-maze-method="diffmppi" controls muted playsinline preload="none" poster="./static/images/maze2d/diffmppi.png?v=clean-labels-1" width="900" height="900" aria-label="Diff-MPPI Maze2D navigation">
+                <source src="./static/videos/maze2d/diffmppi.mp4?v=clean-labels-1" type="video/mp4">
+                Your browser does not support embedded video.
+              </video>
+              <div class="maze-clip-actions"><button type="button" data-maze-contact="diffmppi">Collision detail ↗</button></div>
+            </article>
+            <article class="maze-planner maze-ours">
+              <h3>SCOPE</h3><p>Same diffusion guide + adaptive exploration</p>
+              <video data-maze-method="scope" controls muted playsinline preload="none" poster="./static/images/maze2d/scope.png?v=exploration-covariance-6" width="900" height="900" aria-label="SCOPE Maze2D navigation">
+                <source src="./static/videos/maze2d/scope.mp4?v=exploration-covariance-6" type="video/mp4">
+                Your browser does not support embedded video.
+              </video>
+              <div class="maze-clip-actions"></div>
+            </article>
+          </div>
+          <div class="maze-legend" aria-label="Trajectory legend">
+            <span><i class="maze-key maze-key-rollouts" aria-hidden="true"></i>Rollouts</span>
+            <span><i class="maze-key maze-key-executed" aria-hidden="true"></i>Executed path</span>
+            <span><i class="maze-key maze-key-tube" aria-hidden="true"></i>95% covariance tube</span>
+            <span><i class="maze-key maze-key-weight" aria-hidden="true"></i>High-weight rollout</span>
+            <span><i class="maze-key maze-key-colliding" aria-hidden="true"></i>Colliding rollouts</span>
+            <span><i class="maze-key maze-key-plan" aria-hidden="true"></i>MPPI plan</span>
+            <span><i class="maze-key maze-key-contact" aria-hidden="true"></i>Collision path / contact</span>
+          </div>
+        </div>
+        <figure class="paper-figure maze-efficiency" id="maze-results">
+          <picture>
+            <source media="(max-width: 600px)" srcset="./static/images/maze2d_curves_mobile.svg">
+            <img src="./static/images/maze2d_curves.svg" alt="Maze2D success rate and mean path length across rollout budgets. SCOPE achieves the highest success rate and shortest mean path length at every evaluated budget." loading="lazy" width="800" height="437">
+          </picture>
+          <figcaption><strong>Rollout efficiency.</strong> SCOPE achieves the highest success rate and shortest average path length across all evaluated rollout budgets. Adaptive exploration helps MPPI escape local traps while limiting collisions near walls.</figcaption>
+        </figure>
+      </section>
+
+      <section class="paper-section" id="crowd-navigation" aria-labelledby="crowd-title">
+        <p class="section-label">Predictive world model</p>
+        <h2 id="crowd-title">Y-Corridor Pedestrian Navigation</h2>
+        <div class="crowd-comparison" id="crowd-comparison" data-timeline="./static/data/y-corridor-timeline.json" aria-label="Y-corridor recorded navigation comparison">
+          <div class="crowd-playback" hidden>
+            <button type="button" data-crowd-play>Play</button>
+            <button type="button" data-crowd-replay>Replay</button>
+            <button type="button" data-crowd-contact aria-controls="crowd-collision-note" aria-expanded="false">Collision detail ↗</button>
+            <span data-crowd-message role="status" aria-live="polite"></span>
+          </div>
+          <div class="crowd-video-grid">
+            <article class="crowd-planner">
+              <header class="crowd-video-heading">
+                <div><h3>MID-Ensemble-64</h3><span class="crowd-execution">latency-aware</span></div>
+                <div class="crowd-video-state"><span data-crowd-clock="ens64" hidden>0.0 s</span><span data-crowd-result="ens64" class="crowd-outcome"></span></div>
+              </header>
+              <video data-crowd-method="ens64" controls muted playsinline preload="none" poster="./static/images/y_corridor/ens64.png" width="900" height="636" aria-label="MID-Ensemble-64 with latency-aware execution, including pedestrian P1 and P2 predictions">
+                <source src="./static/videos/y_corridor/ens64.mp4?v=clean-1" type="video/mp4">
+                Your browser does not support embedded video.
+              </video>
+            </article>
+            <article class="crowd-planner crowd-ours">
+              <header class="crowd-video-heading">
+                <div><h3>SCOPE</h3><span class="crowd-execution">synchronous</span></div>
+                <div class="crowd-video-state"><span data-crowd-clock="scope" hidden>0.0 s</span><span data-crowd-result="scope" class="crowd-outcome"></span></div>
+              </header>
+              <video data-crowd-method="scope" controls muted playsinline preload="none" poster="./static/images/y_corridor/scope.png" width="900" height="636" aria-label="SCOPE with synchronous execution, including pedestrian P1 and P2 predictions">
+                <source src="./static/videos/y_corridor/scope.mp4?v=clean-1" type="video/mp4">
+                Your browser does not support embedded video.
+              </video>
+            </article>
+          </div>
+          <p id="crowd-collision-note" class="crowd-collision-note" hidden>Prediction latency delays the robot’s response to P1, leaving too little time to avoid collision.</p>
+        </div>
+        <figure class="paper-figure crowd-results" id="crowd-results">
+          <picture>
+            <source media="(max-width: 600px)" srcset="./static/images/y_corridor_results_mobile.svg">
+            <img src="./static/images/y_corridor_results.svg" alt="Success rates for 3, 6, 9, and 12 pedestrians, respectively. No future prediction: 80%, 72%, 70%, 65%. LKF: 96%, 91%, 90%, 85%. MID-UM (no tubes): 100%, 89%, 85%, 86%. MID-MM (no tubes): 100%, 91%, 85%, 88%. MID-Ens-64: 98%, 87%, 82%, 89%. MID-Ens-128: 99%, 90%, 82%, 86%. MID-Ens-256: 99%, 90%, 83%, 87%. SCOPE, no calibration: 100%, 94%, 86%, 88%. SCOPE (full): 100%, 96%, 93%, 92%." loading="lazy" width="1300" height="480">
+          </picture>
+          <figcaption><strong>Success rate ↑.</strong> 100 episodes per method and density. Success means reaching the goal without collision or timeout. UM / MM: unimodal / multimodal.</figcaption>
+        </figure>
+      </section>
+
+      <section class="paper-section" id="real-robot" aria-labelledby="robot-title">
+        <p class="section-label">Real-world validation</p>
+        <h2 id="robot-title">Franka Panda Shelf Manipulation</h2>
+        <div class="reading-copy"><p>A Franka Panda transfers a tomato to the upper shelf, with static obstacles or a moving human hand. Each method runs <strong>30 trials per condition</strong>.</p></div>
+        <figure class="paper-figure robot-setup">
+          <img src="./static/images/real_robot_setting.png" alt="Shelf manipulation setup showing the tomato as the robot target, the Oreo box as the human target, and the surrounding static obstacles." loading="lazy" width="1899" height="1149" decoding="async">
+          <figcaption><strong>Task setup.</strong> Tomato: robot target. Oreo box: human target in dynamic trials.</figcaption>
+        </figure>
+        <figure class="paper-figure">
+          <img src="./static/images/real_robot_modes.png" alt="A: wider front approach. B: tighter side approach. C: two RGB webcams used to track the human hand." loading="lazy" width="2000" height="386" decoding="async">
+          <figcaption><strong>A:</strong> wider front approach. <strong>B:</strong> tighter side approach. <strong>C:</strong> two-camera hand tracking.</figcaption>
+        </figure>
+        <div class="robot-results" id="robot-results" aria-label="Real-robot results: static and dynamic conditions">
+          <figure class="paper-figure">
+            <img src="./static/images/real_robot_static_results.svg" alt="Static obstacles, 30 trials per method. Success / collision / timeout counts: Diffuser 14 / 16 / 0. Vanilla MPPI 5 / 24 / 1. Diff-MPPI 15 / 7 / 8. SCOPE 25 / 4 / 1. SCOPE success rate: 83%." loading="lazy" width="620" height="640">
+          </figure>
+          <figure class="paper-figure">
+            <img src="./static/images/real_robot_dynamic_results.svg" alt="Dynamic interaction, 30 trials per method. Success / any collision / timeout counts: SCOPE without world model 11 / 19 / 0. MID-Ens-64 16 / 14 / 0. MID-Ens-128 14 / 16 / 0. SCOPE 21 / 7 / 2. Environment / human collision counts: 8 / 12, 8 / 8, 9 / 10, 4 / 3. Collision types may overlap. SCOPE success rate: 70%." loading="lazy" width="620" height="640">
+          </figure>
+        </div>
+        <p class="table-note robot-results-note">30 trials per method and condition. Counts derived from the paper’s rounded rates. WM: world model.</p>
+
+        <div class="experiment-subsection" id="robot-static-videos">
+          <h3>Static obstacle avoidance</h3>
+          <div class="robot-video-grid static-videos">
+            <figure class="robot-clip">
+              <video controls muted loop playsinline preload="none" poster="./static/images/real_robot_videos/static_diffusion_box_collision.jpg" width="1080" height="1080" aria-label="Diffusion: Box collision">
+                <source src="./static/videos/real_robot/static_diffusion_box_collision.mp4" type="video/mp4">
+                Your browser does not support embedded video.
+              </video>
+              <figcaption><strong>Diffusion</strong><span>Box collision</span></figcaption>
+            </figure>
+            <figure class="robot-clip">
+              <video controls muted loop playsinline preload="none" poster="./static/images/real_robot_videos/static_diff_mppi_box_collision.jpg" width="1080" height="1080" aria-label="Diff-MPPI: Box collision">
+                <source src="./static/videos/real_robot/static_diff_mppi_box_collision.mp4" type="video/mp4">
+                Your browser does not support embedded video.
+              </video>
+              <figcaption><strong>Diff-MPPI</strong><span>Box collision</span></figcaption>
+            </figure>
+            <figure class="robot-clip">
+              <video controls muted loop playsinline preload="none" poster="./static/images/real_robot_videos/static_scope_obstacle_avoidance.jpg" width="1080" height="1080" aria-label="SCOPE: Obstacle avoidance">
+                <source src="./static/videos/real_robot/static_scope_obstacle_avoidance.mp4" type="video/mp4">
+                Your browser does not support embedded video.
+              </video>
+              <figcaption><strong>SCOPE</strong><span>Obstacle avoidance</span></figcaption>
+            </figure>
+            <figure class="robot-clip">
+              <video controls muted loop playsinline preload="none" poster="./static/images/real_robot_videos/static_diffusion_shelf_collision.jpg" width="1080" height="1080" aria-label="Diffusion: Shelf collision">
+                <source src="./static/videos/real_robot/static_diffusion_shelf_collision.mp4" type="video/mp4">
+                Your browser does not support embedded video.
+              </video>
+              <figcaption><strong>Diffusion</strong><span>Shelf collision</span></figcaption>
+            </figure>
+            <figure class="robot-clip">
+              <video controls muted loop playsinline preload="none" poster="./static/images/real_robot_videos/static_diff_mppi_stuck.jpg" width="1080" height="1080" aria-label="Diff-MPPI: Stuck side grasp">
+                <source src="./static/videos/real_robot/static_diff_mppi_stuck.mp4" type="video/mp4">
+                Your browser does not support embedded video.
+              </video>
+              <figcaption><strong>Diff-MPPI</strong><span>Stuck side grasp</span></figcaption>
+            </figure>
+            <figure class="robot-clip">
+              <video controls muted loop playsinline preload="none" poster="./static/images/real_robot_videos/static_scope_tight_layout.jpg" width="1080" height="1080" aria-label="SCOPE: Tighter-layout success">
+                <source src="./static/videos/real_robot/static_scope_tight_layout.mp4" type="video/mp4">
+                Your browser does not support embedded video.
+              </video>
+              <figcaption><strong>SCOPE</strong><span>Tighter-layout success</span></figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <div class="experiment-subsection" id="robot-dynamic-videos">
+          <h3>Dynamic human interaction</h3>
+          <div class="robot-video-grid dynamic-videos">
+            <figure class="robot-clip">
+              <video controls muted loop playsinline preload="none" poster="./static/images/real_robot_videos/dynamic_no_wm_shelf_collision.jpg" width="1080" height="1920" aria-label="No world model: Top-shelf collision">
+                <source src="./static/videos/real_robot/dynamic_no_wm_shelf_collision.mp4" type="video/mp4">
+                Your browser does not support embedded video.
+              </video>
+              <figcaption><strong>No world model</strong><span>Top-shelf collision</span></figcaption>
+            </figure>
+            <figure class="robot-clip">
+              <video controls muted loop playsinline preload="none" poster="./static/images/real_robot_videos/dynamic_no_wm_hand_collision.jpg" width="1080" height="1920" aria-label="No world model: Hand collision">
+                <source src="./static/videos/real_robot/dynamic_no_wm_hand_collision.mp4" type="video/mp4">
+                Your browser does not support embedded video.
+              </video>
+              <figcaption><strong>No world model</strong><span>Hand collision</span></figcaption>
+            </figure>
+            <figure class="robot-clip">
+              <video controls muted loop playsinline preload="none" poster="./static/images/real_robot_videos/dynamic_scope_early_yield.jpg" width="1080" height="1920" aria-label="SCOPE: Early yielding">
+                <source src="./static/videos/real_robot/dynamic_scope_early_yield.mp4" type="video/mp4">
+                Your browser does not support embedded video.
+              </video>
+              <figcaption><strong>SCOPE</strong><span>Early yielding</span></figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="paper-section limitations-section" id="limitations" aria-labelledby="limitations-title">
+        <h2 id="limitations-title">Limitations</h2>
+        <div class="reading-copy"><p>SCOPE distills uncertainty from a learned diffusion score, so its reliability depends on the backbone. Limited training coverage or poorly separated modes can lead to miscalibrated uncertainty tubes. In real-robot trials, inaccurate human-motion forecasts or yielding into constrained configurations can still cause failures that short-horizon control cannot recover from. Current experiments use low-dimensional state and geometry inputs. Extending SCOPE to images and point clouds remains future work.</p></div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <span>SCOPE · CoRL 2026 Spotlight</span>
+    <a href="#top">Back to top ↑</a>
+  </footer>
+  <script src="./static/js/maze-comparison.js?v=pause-state-3" defer></script>
+  <script src="./static/js/crowd-comparison.js?v=2" defer></script>
+</body>
+</html>

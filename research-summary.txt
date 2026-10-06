@@ -1,0 +1,56 @@
+Control-Ready Uncertainty for Trajectory Diffusion
+SCOPE — Score Curvature for Online Precision Estimation
+
+Authors: Zhiwei Xue, Jia Yue Kam, Jinhang Qiu, Yifeng Cheng, Ege Gursoy, Jiaming Wang, Vincent Bonnet, Harold Soh
+
+Affiliations: National University of Singapore. Smart Systems Institute, National University of Singapore. LAAS-CNRS
+
+Abstract
+Diffusion models can represent complex, multimodal trajectory distributions, but extracting uncertainty from them typically requires costly Monte Carlo sampling. This limits their use in real-time control, where robots must rapidly assess risk and maintain safety margins. We introduce Score-Curvature for Online Precision Estimation (SCOPE), a lightweight module that augments diffusion trajectory models with control-ready uncertainty. SCOPE learns a structured precision matrix around each nominal trajectory by distilling score-curvature information and producing calibrated Gaussian tubes with low overhead and without repeated Monte Carlo sampling. These tubes provide per-timestep covariance estimates that can be used both as predicted occupancy for moving agents and as adaptive exploration guides for robot control. We evaluate SCOPE with mode-conditioned multimodal diffusion backbones in pedestrian forecasting, crowd navigation, Maze2D control, and real-world Franka Panda manipulation. Across these settings, SCOPE provides fast uncertainty estimation, which leads to better closed-loop performance.
+
+Method
+SCOPE turns diffusion trajectories into Gaussian uncertainty tubes for real-time control.
+SCOPE extracts aleatoric trajectory uncertainty from diffusion models for two uses:
+1) Policy prior: adapt MPPI exploration to the robot's motion flexibility.
+2) World model: predict other agents' occupancy for collision-risk evaluation.
+
+Maze2D navigation
+A diffusion plan guides MPPI through unseen mazes. SCOPE widens exploration in open regions and narrows it near walls.
+MPPI rollout budgets: 4, 8, 16, 32, 64, 128, 256, 512, 1024
+Vanilla MPPI
+Success rate (%): 43.20, 68.00, 76.75, 82.30, 84.90, 87.35, 89.95, 92.45, 93.75
+Mean path length: 16.701, 13.195, 10.846, 9.275, 8.339, 7.505, 6.784, 6.117, 5.573
+Log-MPPI
+Success rate (%): 32.30, 59.70, 75.30, 82.70, 86.50, 90.00, 92.15, 93.95, 94.55
+Mean path length: 20.147, 15.666, 12.509, 10.510, 9.042, 7.884, 7.066, 6.389, 5.994
+Diff-MPPI
+Success rate (%): 41.10, 64.85, 77.80, 85.25, 88.30, 92.15, 94.45, 95.35, 96.35
+Mean path length: 16.518, 12.502, 9.875, 8.290, 7.350, 6.502, 5.981, 5.676, 5.328
+SCOPE
+Success rate (%): 58.50, 79.50, 87.35, 92.20, 95.35, 97.80, 98.50, 99.15, 99.25
+Mean path length: 13.271, 9.978, 8.258, 7.046, 6.123, 5.461, 5.175, 5.060, 4.996
+
+Y-corridor pedestrian navigation
+100 episodes per method and density. Success means reaching the goal without collision or timeout.
+Pedestrian counts: 3, 6, 9, 12
+No future prediction success (%): 80, 72, 70, 65
+LKF success (%): 96, 91, 90, 85
+MID-UM (no tubes) success (%): 100, 89, 85, 86
+MID-MM (no tubes) success (%): 100, 91, 85, 88
+MID-Ens-64 success (%): 98, 87, 82, 89
+MID-Ens-128 success (%): 99, 90, 82, 86
+MID-Ens-256 success (%): 99, 90, 83, 87
+SCOPE, no calibration success (%): 100, 94, 86, 88
+SCOPE (full) success (%): 100, 96, 93, 92
+
+Real-robot shelf manipulation
+A Franka Panda transfers a tomato to the upper shelf, with static obstacles or a moving human hand. Each method runs 30 trials per condition .
+Static obstacles, 30 trials per method. Success / collision / timeout counts: Diffuser 14 / 16 / 0. Vanilla MPPI 5 / 24 / 1. Diff-MPPI 15 / 7 / 8. SCOPE 25 / 4 / 1. SCOPE success rate: 83%.
+Dynamic interaction, 30 trials per method. Success / any collision / timeout counts: SCOPE without world model 11 / 19 / 0. MID-Ens-64 16 / 14 / 0. MID-Ens-128 14 / 16 / 0. SCOPE 21 / 7 / 2. Environment / human collision counts: 8 / 12, 8 / 8, 9 / 10, 4 / 3. Collision types may overlap. SCOPE success rate: 70%.
+
+Limitations
+SCOPE distills uncertainty from a learned diffusion score, so its reliability depends on the backbone. Limited training coverage or poorly separated modes can lead to miscalibrated uncertainty tubes. In real-robot trials, inaccurate human-motion forecasts or yielding into constrained configurations can still cause failures that short-horizon control cannot recover from. Current experiments use low-dimensional state and geometry inputs. Extending SCOPE to images and point clouds remains future work.
+
+Availability
+The project page currently has no arXiv link. The code link is marked Coming soon.
+The figures, videos, and full project description are linked from index.html.

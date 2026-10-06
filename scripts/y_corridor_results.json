@@ -1,0 +1,92 @@
+{
+  "densities": [
+    3,
+    6,
+    9,
+    12
+  ],
+  "episodes_per_condition": 100,
+  "methods": [
+    {
+      "method": "No future prediction",
+      "success": [
+        80,
+        72,
+        70,
+        65
+      ]
+    },
+    {
+      "method": "LKF",
+      "success": [
+        96,
+        91,
+        90,
+        85
+      ]
+    },
+    {
+      "method": "MID-UM (no tubes)",
+      "success": [
+        100,
+        89,
+        85,
+        86
+      ]
+    },
+    {
+      "method": "MID-MM (no tubes)",
+      "success": [
+        100,
+        91,
+        85,
+        88
+      ]
+    },
+    {
+      "method": "MID-Ens-64",
+      "success": [
+        98,
+        87,
+        82,
+        89
+      ]
+    },
+    {
+      "method": "MID-Ens-128",
+      "success": [
+        99,
+        90,
+        82,
+        86
+      ]
+    },
+    {
+      "method": "MID-Ens-256",
+      "success": [
+        99,
+        90,
+        83,
+        87
+      ]
+    },
+    {
+      "method": "SCOPE, no calibration",
+      "success": [
+        100,
+        94,
+        86,
+        88
+      ]
+    },
+    {
+      "method": "SCOPE (full)",
+      "success": [
+        100,
+        96,
+        93,
+        92
+      ]
+    }
+  ]
+}
