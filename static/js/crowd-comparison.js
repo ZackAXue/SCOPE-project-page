@@ -6,11 +6,6 @@
   const play = root.querySelector('[data-crowd-play]');
   const message = root.querySelector('[data-crowd-message]');
   const contact = root.querySelector('[data-crowd-contact]');
-  const collisionNote = root.querySelector('#crowd-collision-note');
-  function showCollisionNote(show) {
-    collisionNote.hidden = !show;
-    contact.setAttribute('aria-expanded', String(show));
-  }
   let data, loaded = false, wanted = false, visible = false, busy = false;
   let starting = false, hasStarted = false, request = 0;
   const pause = () => videos.forEach(video => video.pause());
@@ -71,7 +66,6 @@
     });
   }
   async function go(target) {
-    if (target === 0) showCollisionNote(false);
     const token = ++request;
     wanted = true; busy = true; pause(); label(); load();
     message.textContent = 'Loading…';
@@ -115,7 +109,6 @@
     });
     root.querySelector('[data-crowd-replay]').addEventListener('click', () => go(0));
     contact.addEventListener('click', () => {
-      showCollisionNote(true);
       go(data.collisionDetail);
     });
     master.addEventListener('ended', () => { wanted = false; pause(); label(); readout(); });
