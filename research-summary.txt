@@ -52,5 +52,5 @@ Limitations
 SCOPE distills uncertainty from a learned diffusion score, so its reliability depends on the backbone. Limited training coverage or poorly separated modes can lead to miscalibrated uncertainty tubes. In real-robot trials, inaccurate human-motion forecasts or yielding into constrained configurations can still cause failures that short-horizon control cannot recover from. Current experiments use low-dimensional state and geometry inputs. Extending SCOPE to images and point clouds remains future work.
 
 Availability
-The project page currently has no arXiv link. The code link is marked Coming soon.
+The paper is available at https://arxiv.org/abs/2610.12431. The code link is marked Coming soon.
 The figures, videos, and full project description are linked from index.html.

@@ -2,7 +2,7 @@
 
 > SCOPE (Score Curvature for Online Precision Estimation) extracts aleatoric trajectory uncertainty from diffusion models for robot control.
 
-SCOPE uses uncertainty as a policy prior for MPPI exploration and as a world model for collision-risk evaluation. The project evaluates Maze2D navigation, Y-corridor crowd navigation, and real-robot Franka Panda manipulation. The project page currently has no arXiv link, and the code link is marked Coming soon.
+SCOPE uses uncertainty as a policy prior for MPPI exploration and as a world model for collision-risk evaluation. The project evaluates Maze2D navigation, Y-corridor crowd navigation, and real-robot Franka Panda manipulation. The paper is available at https://arxiv.org/abs/2610.12431. The code link is marked Coming soon.
 
 ## Research
 
